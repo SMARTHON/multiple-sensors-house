@@ -1,6 +1,6 @@
 /**
  * Sensors blocks
  */
-//% weight=100 color=#04B404 icon="\uf1b2"
+//% weight=100 color=#333300 icon="\uf015"
 namespace House {
 }

@@ -70,6 +70,7 @@ namespace House {
     //% blockId="smarthon_get_light" 
     //% block="Get light (Lx)"
     //% weight=80	
+	//% blockGap=7	
 
     export function getLight(): number {
         return light_variable;
@@ -78,6 +79,7 @@ namespace House {
     //% blockId="smarthon_get_temperature" 
     //% block="Get temperature (°C)"
     //% weight=79
+	//% blockGap=7	
 
     export function getTemperature(): number {
         return temperature_variable;
@@ -87,6 +89,7 @@ namespace House {
 	//% blockId="smarthon_get_humidity" 
     //% block="Get humidity (%)"
     //% weight=78	
+	//% blockGap=7	
 
     export function getHumidity(): number {
         return humidity_variable;
@@ -95,6 +98,7 @@ namespace House {
 	//% blockId="smarthon_get_heat" 
     //% block="Get heat"
     //% weight=77	
+	//% blockGap=7	
 
     export function getHeat(): number {
         return heat_variable;
@@ -103,6 +107,7 @@ namespace House {
 	//% blockId="smarthon_get_button" 
     //% block="Get button pressed"
     //% weight=76	
+	//% blockGap=7	
 
     export function getButton(): number {
         return button_variable;
@@ -112,6 +117,7 @@ namespace House {
 	//% blockId="smarthon_get_motion" 
     //% block="Get motion"
     //% weight=75	
+	//% blockGap=7	
 
     export function getMotion(): number {
         return motion_variable;
@@ -120,6 +126,7 @@ namespace House {
 	//% blockId="smarthon_get_flame" 
     //% block="Get flame"
     //% weight=74	
+	//% blockGap=7	
 
     export function getFlame(): number {
         return flame_variable;
@@ -127,6 +134,7 @@ namespace House {
 	//% blockId="smarthon_get_towngas" 
     //% block="Get town gas"
     //% weight=73
+	//% blockGap=7	
 
     export function getTownGas(): number {
         return towngas_variable;
