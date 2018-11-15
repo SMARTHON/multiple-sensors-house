@@ -139,122 +139,101 @@ namespace House {
     export function getTownGas(): number {
         return towngas_variable;
     }
-		
-	//% blockId="smarthon_led"
-    //% block="Set LED to intensity %intensity"
-    //% intensity.min=0 intensity.max=1023
-    //% weight=50
-	//%subcategory=More
-	//% blockGap=7	
 	
-    export function TurnLED(intensity: number): void {
-			
-		let newCommand = "o/8/" + intensity		
-		if(ledCommand != newCommand){
-			serial.writeLine(newCommand)
-			ledCommand = newCommand
-		}
-		basic.pause(2000);
-    }
-	
-	//% blockId="smarthon_vibrator"
-    //% block="Set vibrator to intensity %intensity"
+	//% blockId="smarthon_red_LED"
+    //% block="Set RED LED to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
     //% weight=49
 	//%subcategory=More
 	//% blockGap=7	
 	
-    export function TurnVibrator(intensity: number): void {
+    export function TurnRedLED(intensity: number): void {
 			
-		let newCommand = "o/13/" + intensity		
-		if(vibratorCommand != newCommand){
-			serial.writeLine(newCommand)
-			vibratorCommand = newCommand
-		}
-		basic.pause(2000);
+		pins.analogWritePin(AnalogPin.P0, intensity);
     }
 	
-	//% blockId="smarthon_usb"
-    //% block="Set USB to intensity %intensity"
+	//% blockId="smarthon_green_LED"
+    //% block="Set Green LED to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
-    //% weight=48	
+    //% weight=48
 	//%subcategory=More
 	//% blockGap=7	
 	
-    export function TurnUSB(intensity: number): void {
+    export function TurnGreenLED(intensity: number): void {
 			
-		let newCommand = "o/4/" + intensity		
-		if(usbCommand != newCommand){
-			serial.writeLine(newCommand)
-			usbCommand = newCommand
-		}
-		basic.pause(2000);
+		pins.analogWritePin(AnalogPin.P1, intensity);
     }
 	
-	//% blockId="smarthon_buzzer"
-    //% block="Set Buzzer to intensity %intensity"
+	//% blockId="smarthon_white_LED"
+    //% block="Set White LED to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
-    //% weight=47	
+    //% weight=47
 	//%subcategory=More
-	//% blockGap=7	
+
 	
-    export function TurnBuzzer(intensity: number): void {
+    export function TurnWhiteLED(intensity: number): void {
 			
-		let newCommand = "o/12/" + intensity		
-		if(buzzerCommand != newCommand){
-			serial.writeLine(newCommand)
-			buzzerCommand = newCommand
-		}
-		basic.pause(2000);
+		pins.analogWritePin(AnalogPin.P2, intensity);
     }
 	
-	//% blockId="smarthon_waterpump"
-    //% block="Set Water pump to intensity %intensity"
+	//% blockId="smarthon_motorfan_cw"
+    //% block="Set Motor fan clockwisely to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
     //% weight=46	
 	//%subcategory=More
 	//% blockGap=7	
 	
-    export function TurnWaterpump(intensity: number): void {
+    export function TurnMotorCW(intensity: number): void {
 			
-		let newCommand = "o/6/" + intensity		
-		if(motor1Command != newCommand){
-			serial.writeLine(newCommand)
-			motor1Command = newCommand
-		}
-		basic.pause(2000);
+		pins.analogWritePin(AnalogPin.P13, intensity);
     }
 	
-	//% blockId="smarthon_servo"
-    //% block="Set Servo to degree %degree"
-    //% intensity.min=0 intensity.max=180
-    //% weight=45	
-	//%subcategory=More
-	
-    export function TurnServo(intensity: number): void {
-			
-		let newCommand = "v/7/" + intensity		
-		if(servoCommand != newCommand){
-			serial.writeLine(newCommand)
-			servoCommand = newCommand
-		}
-		basic.pause(2000);
-    }
-	
-	//% blockId="smarthon_output"
-    //% block="Set output pin %pin| to intensity %intensity"
+	//% blockId="smarthon_motorfan_acw"
+    //% block="Set Motor fan anti-clockwisely to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
-    //% weight=44	
+    //% weight=45
+	//%subcategory=More
+	//% blockGap=7	
+	
+    export function TurnMotorACW(intensity: number): void {
+			
+		pins.analogWritePin(AnalogPin.P0, intensity);
+    }
+	
+	
+	//% blockId="smarthon_180_servo"
+    //% block="Set 180 Servo to degree %degree"
+    //% intensity.min=0 intensity.max=180
+    //% weight=44
+	//%subcategory=More
+	//% blockGap=7	
+	
+    export function Turn180Servo(intensity: number): void {
+			
+		pins.servoWritePin(AnalogPin.P15, 180)
+    }
+	
+		
+	//% blockId="smarthon_360_servo"
+    //% block="Set 360 Servo to degree %degree"
+    //% intensity.min=0 intensity.max=180
+    //% weight=43
 	//%subcategory=More
 	
-    export function TurnOutput(pin: number, intensity: number): void {
+    export function Turn360Servo(intensity: number): void {
 			
-		let newCommand = "o/" + pin + "/" + intensity		
-		if(generalCommand != newCommand){
-			serial.writeLine(newCommand)
-			generalCommand = newCommand
-		}
-		basic.pause(2000);
+		pins.servoWritePin(AnalogPin.P16, 180)
+    }
+	
+	//% blockId="smarthon_buzzer"
+    //% block="Set Buzzer to intensity %intensity"
+    //% intensity.min=0 intensity.max=1023
+    //% weight=42
+	//%subcategory=More	
+	
+    export function TurnBuzzer(intensity: number): void {
+			
+		pins.analogWritePin(AnalogPin.P14, intensity);
     }
 
 }
