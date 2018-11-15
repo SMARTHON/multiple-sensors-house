@@ -1,10 +1,12 @@
-namespace Plant {    
+namespace House {    
     let light_variable = 0
     let temperature_variable = 0
-	let pressure_variable = 0
-	let altitude_variable = 0
 	let humidity_variable = 0
-	let soilMoisture_variable = 0
+	let heat_variable = 0
+	let button_variable = 0
+	let motion_variable = 0
+	let flame_variable = 0
+	let towngas_variable = 0
 	
 	let ledCommand = ""
 	let vibratorCommand = ""
@@ -27,29 +29,37 @@ namespace Plant {
 
             if (temp.charAt(0).compare("L") == 0) {
 
-                light_variable = parseInt(temp.substr(1, 10))
+                light_variable = parseInt(temp.substr(1, temp.length-2))
 
             } else if (temp.charAt(0).compare("T") == 0) {
 
-                temperature_variable = parseInt(temp.substr(1, 10))
+                temperature_variable = parseInt(temp.substr(1, temp.length-2))
 
-            } else if (temp.charAt(0).compare("P") == 0) {
+            }  else if (temp.charAt(0).compare("H") == 0) {
 
-                pressure_variable = parseInt(temp.substr(1, 10))
+                humidity_variable = parseInt(temp.substr(1, temp.length-2))
 
             } else if (temp.charAt(0).compare("A") == 0) {
 
-                altitude_variable = parseInt(temp.substr(1, 10))
+                heat_variable = parseInt(temp.substr(1, temp.length-2))
 
-            } else if (temp.charAt(0).compare("H") == 0) {
+            } else if (temp.charAt(0).compare("B") == 0) {
 
-                humidity_variable = parseInt(temp.substr(1, 10))
+                button_variable = parseInt(temp.substr(1, temp.length-2))
 
-            } else if (temp.charAt(0).compare("S") == 0) {
+            } else if (temp.charAt(0).compare("M") == 0) {
 
-                soilMoisture_variable = parseInt(temp.substr(1, 10))
+                motion_variable = parseInt(temp.substr(1, temp.length-2))
 
-            } else {
+            } else if (temp.charAt(0).compare("F") == 0) {
+
+                flame_variable = parseInt(temp.substr(1, temp.length-2))
+
+            } else if (temp.charAt(0).compare("O") == 0) {
+
+                towngas_variable = parseInt(temp.substr(1, temp.length-2))
+
+            }else {
                 basic.showString(temp)
             }
         })
@@ -73,38 +83,54 @@ namespace Plant {
         return temperature_variable;
     }
 	
-	//% blockId="smarthon_get_pressure" 
-    //% block="Get pressure (hPa)"
-    //% weight=78	
-
-    export function getPressure(): number {
-        return pressure_variable;
-    }
-
-	//% blockId="smarthon_get_altitude" 
-    //% block="Get altitude (m)"
-    //% weight=77	
-
-    export function getAltitude(): number {
-        return altitude_variable;
-    }
-	
+		
 	//% blockId="smarthon_get_humidity" 
     //% block="Get humidity (%)"
-    //% weight=76	
+    //% weight=78	
 
     export function getHumidity(): number {
         return humidity_variable;
     }
 	
-	//% blockId="smarthon_get_soilmoisture" 
-    //% block="Get soil moisture"
-    //% weight=75	
+	//% blockId="smarthon_get_heat" 
+    //% block="Get heat"
+    //% weight=77	
 
-    export function getSoilmoisture(): number {
-        return soilMoisture_variable;
+    export function getHeat(): number {
+        return heat_variable;
     }
 
+	//% blockId="smarthon_get_button" 
+    //% block="Get button pressed"
+    //% weight=76	
+
+    export function getButton(): number {
+        return button_variable;
+    }
+
+	
+	//% blockId="smarthon_get_motion" 
+    //% block="Get motion"
+    //% weight=75	
+
+    export function getMotion(): number {
+        return motion_variable;
+    }
+
+	//% blockId="smarthon_get_flame" 
+    //% block="Get flame"
+    //% weight=74	
+
+    export function getFlame(): number {
+        return flame_variable;
+    }
+	//% blockId="smarthon_get_towngas" 
+    //% block="Get town gas"
+    //% weight=73
+
+    export function getTownGas(): number {
+        return towngas_variable;
+    }
 		
 	//% blockId="smarthon_led"
     //% block="Set LED to intensity %intensity"
