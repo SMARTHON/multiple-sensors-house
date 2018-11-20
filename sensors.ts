@@ -210,7 +210,7 @@ namespace House {
 	
     export function Turn180Servo(intensity: number): void {
 			
-		pins.servoWritePin(AnalogPin.P15, 180)
+		pins.servoWritePin(AnalogPin.P15, intensity)
     }
 	
 		
@@ -222,7 +222,7 @@ namespace House {
 	
     export function Turn360Servo(intensity: number): void {
 			
-		pins.servoWritePin(AnalogPin.P16, 180)
+		pins.servoWritePin(AnalogPin.P16, intensity)
     }
 	
 	//% blockId="smarthon_buzzer"
