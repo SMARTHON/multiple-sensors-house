@@ -68,7 +68,7 @@ namespace House {
     }
 
     //% blockId="smarthon_get_light" 
-    //% block="Get light (Lx)"
+    //% block="Get light"
     //% weight=80	
 	//% blockGap=7	
 
@@ -87,7 +87,7 @@ namespace House {
 	
 		
 	//% blockId="smarthon_get_humidity" 
-    //% block="Get humidity (%)"
+    //% block="Get humidity"
     //% weight=78	
 	//% blockGap=7	
 
