@@ -164,14 +164,14 @@ namespace House {
 		pins.analogWritePin(AnalogPin.P1, intensity);
     }
 	
-	//% blockId="smarthon_white_LED"
-    //% block="Set White LED to intensity %intensity"
+	//% blockId="smarthon_yellow_LED"
+    //% block="Set Yellow LED to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
     //% weight=47
 	//%subcategory=More
 
 	
-    export function TurnWhiteLED(intensity: number): void {
+    export function TurnYellowLED(intensity: number): void {
 			
 		pins.analogWritePin(AnalogPin.P2, intensity);
     }
