@@ -141,7 +141,7 @@ namespace House {
     }
 	
 	//% blockId="smarthon_red_LED"
-    //% block="Set RED LED to intensity %intensity"
+    //% block="Set Red LED to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
     //% weight=49
 	//%subcategory=More
