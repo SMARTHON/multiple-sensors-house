@@ -18,7 +18,7 @@ namespace House {
 	let generalCommand = ""
 	
     // -------------- 1. Initialization ----------------
-    //%blockId=initialize
+    //%blockId=initialize_house
     //%block="Initialize Smarthon multiple-sensor"
     //% weight=90	
     export function initializeWifi(): void {
@@ -67,7 +67,7 @@ namespace House {
         basic.pause(5000);
     }
 
-    //% blockId="smarthon_get_light" 
+    //% blockId="smarthon_get_light_house" 
     //% block="Get light"
     //% weight=80	
 	//% blockGap=7	
@@ -76,7 +76,7 @@ namespace House {
         return light_variable;
     }
 
-    //% blockId="smarthon_get_temperature" 
+    //% blockId="smarthon_get_temperature_house" 
     //% block="Get temperature (°C)"
     //% weight=79
 	//% blockGap=7	
@@ -86,7 +86,7 @@ namespace House {
     }
 	
 		
-	//% blockId="smarthon_get_humidity" 
+	//% blockId="smarthon_get_humidity_house" 
     //% block="Get humidity"
     //% weight=78	
 	//% blockGap=7	
