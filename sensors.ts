@@ -17,6 +17,28 @@ namespace House {
 	let servoCommand = ""
 	let generalCommand = ""
 	
+	export enum ServoDirection {
+        //% block="clockwise"
+        clockwise,
+        //% block="anti-clockwise"
+        anticlockwise
+    }
+
+    export enum ServoSpeed {
+        //% blockId=servo360_level_0
+        //% block="Stop"
+        level0 = 0,
+        //% blockId=servo360_level_1
+        //% block="Level 1"
+        level1 = 1,
+        //% blockId=servo360_level_2
+        //% block="Level 2"
+        level2 = 2,
+        //% blockId=servo360_level_3
+        //% block="Level 3"
+        level3 = 3
+    }
+	
     // -------------- 1. Initialization ----------------
     //%blockId=initialize_house
     //%block="Initialize Smarthon multiple-sensor"
@@ -202,7 +224,7 @@ namespace House {
 	
 	
 	//% blockId="smarthon_180_servo"
-    //% block="Set 180 Servo to degree %degree"
+    //% block="Set 180° Servo to degree %degree"
     //% intensity.min=0 intensity.max=180
     //% weight=44
 	//%subcategory=More
@@ -215,14 +237,48 @@ namespace House {
 	
 		
 	//% blockId="smarthon_360_servo"
-    //% block="Set 360 Servo to degree %degree"
-    //% intensity.min=0 intensity.max=180
+    //% block="Set 360° Servo to direction %direction|speed %speed"
     //% weight=43
 	//%subcategory=More
 	
-    export function Turn360Servo(intensity: number): void {
+    export function Turn360Servo(direction: ServoDirection, speed: ServoSpeed): void {
+		
+		switch (direction) {
 			
-		pins.servoWritePin(AnalogPin.P16, intensity)
+			case ServoDirection.clockwise:
+				switch (speed) {
+					case ServoSpeed.level0:
+						pins.servoWritePin(AnalogPin.P16, 90)
+						break
+					case ServoSpeed.level1:
+						pins.servoWritePin(AnalogPin.P16, 83)
+						break
+					case ServoSpeed.level2:
+						pins.servoWritePin(AnalogPin.P16, 82)
+						break
+					case ServoSpeed.level3:
+						pins.servoWritePin(AnalogPin.P16, 80)
+						break
+				}
+				break
+				
+			case ServoDirection.anticlockwise:
+				switch (speed) {
+					case ServoSpeed.level0:
+						pins.servoWritePin(AnalogPin.P16, 90)
+						break
+					case ServoSpeed.level1:
+						pins.servoWritePin(AnalogPin.P16, 96)
+						break
+					case ServoSpeed.level2:
+						pins.servoWritePin(AnalogPin.P16, 97)
+						break
+					case ServoSpeed.level3:
+						pins.servoWritePin(AnalogPin.P16, 98)
+						break
+				}
+				break
+		}
     }
 	
 	//% blockId="smarthon_buzzer"
