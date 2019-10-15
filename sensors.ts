@@ -39,6 +39,34 @@ namespace House {
         level3 = 3
     }
 	
+	export enum GeneralSensorPort {
+        //% block="A1"
+        a1,
+        //% block="A2"
+        a2,
+		//% block="A3"
+        a3,
+		//% block="A6"
+        a6,
+		//% block="A7"
+        a7
+    }
+	
+	export enum GeneralActuatorPort {
+        //% block="P0"
+        p0,
+		//% block="P1"
+        p1,
+        //% block="P2"
+        p2,
+		//% block="P13"
+        p13,
+		//% block="P15"
+        p15,
+		//% block="P16"
+        p16
+    }
+	
     // -------------- 1. Initialization ----------------
     //%blockId=initialize_house
     //%block="Initialize Smarthon multiple-sensor"
@@ -156,10 +184,34 @@ namespace House {
 	//% blockId="smarthon_get_towngas" 
     //% block="Get town gas"
     //% weight=73
-	//% blockGap=7	
 
     export function getTownGas(): number {
         return towngas_variable;
+    }
+	
+	//% blockId="smarthon_get_generalsensor" 
+    //% block="Get general sensor value %port"
+    //% weight=72
+	//% blockGap=7	
+
+    export function getGeneralSensor(port: GeneralSensorPort): number {
+        switch (port) {
+			case port.a1:
+				return light_variable;
+				break
+			case port.a2:
+				return button_variable;
+				break
+			case port.a3:
+				return motion_variable;
+				break
+			case port.a6:
+				return flame_variable;
+				break
+			case port.a7:
+				return towngas_variable;
+			break
+		}
     }
 	
 	//% blockId="smarthon_red_LED"
