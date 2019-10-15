@@ -118,7 +118,7 @@ namespace House {
     }
 
     //% blockId="smarthon_get_light_house" 
-    //% block="Get light"
+    //% block="Get light value"
     //% weight=80	
 	//% blockGap=7	
 
@@ -137,7 +137,7 @@ namespace House {
 	
 		
 	//% blockId="smarthon_get_humidity_house" 
-    //% block="Get humidity"
+    //% block="Get humidity (percentage)"
     //% weight=78	
 	//% blockGap=7	
 
@@ -146,7 +146,7 @@ namespace House {
     }
 	
 	//% blockId="smarthon_get_heat" 
-    //% block="Get heat"
+    //% block="Get heat (index)"
     //% weight=77	
 	//% blockGap=7	
 
@@ -165,7 +165,7 @@ namespace House {
 
 	
 	//% blockId="smarthon_get_motion" 
-    //% block="Get motion"
+    //% block="Get motion value"
     //% weight=75	
 	//% blockGap=7	
 
@@ -174,7 +174,7 @@ namespace House {
     }
 
 	//% blockId="smarthon_get_flame" 
-    //% block="Get flame"
+    //% block="Get flame value"
     //% weight=74	
 	//% blockGap=7	
 
@@ -182,7 +182,7 @@ namespace House {
         return flame_variable;
     }
 	//% blockId="smarthon_get_towngas" 
-    //% block="Get town gas"
+    //% block="Get town gas value"
     //% weight=73
 
     export function getTownGas(): number {
@@ -190,7 +190,7 @@ namespace House {
     }
 	
 	//% blockId="smarthon_get_generalsensor" 
-    //% block="Get general sensor value %port"
+    //% block="Get general sensor port %port"
     //% weight=72
 	//% blockGap=7	
 
@@ -243,6 +243,7 @@ namespace House {
     //% intensity.min=0 intensity.max=1023
     //% weight=47
 	//%subcategory=More
+	//% blockGap=7	
 
 	
     export function TurnYellowLED(intensity: number): void {
@@ -250,10 +251,22 @@ namespace House {
 		pins.analogWritePin(AnalogPin.P2, intensity);
     }
 	
+		
+	//% blockId="smarthon_buzzer"
+    //% block="Set Buzzer to intensity %intensity"
+    //% intensity.min=0 intensity.max=1023
+    //% weight=46
+	//%subcategory=More	
+	
+    export function TurnBuzzer(intensity: number): void {
+			
+		pins.analogWritePin(AnalogPin.P14, intensity);
+    }
+	
 	//% blockId="smarthon_motorfan_cw"
     //% block="Set Motor fan clockwisely to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
-    //% weight=46	
+    //% weight=45	
 	//%subcategory=More
 	//% blockGap=7	
 	
@@ -261,17 +274,7 @@ namespace House {
 			
 		pins.analogWritePin(AnalogPin.P13, intensity);
     }
-	
-	//% blockId="smarthon_buzzer"
-    //% block="Set Buzzer to intensity %intensity"
-    //% intensity.min=0 intensity.max=1023
-    //% weight=45
-	//%subcategory=More	
-	
-    export function TurnBuzzer(intensity: number): void {
-			
-		pins.analogWritePin(AnalogPin.P14, intensity);
-    }
+
 	
 	//% blockId="smarthon_motorfan_acw"
     //% block="Set Motor fan anti-clockwisely to intensity %intensity"
