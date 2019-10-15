@@ -349,6 +349,7 @@ namespace House {
 	
 	//% blockId="smarthon_house_general_output"
     //% block="Set general output port %port|intensity %intensity"
+	//% intensity.min=0 intensity.max=1023
     //% weight=41
 	//%subcategory=More
 	
@@ -359,6 +360,9 @@ namespace House {
 				break
 			case GeneralActuatorPort.p1:
 				pins.analogWritePin(AnalogPin.P1, intensity);
+				break
+			case GeneralActuatorPort.p2:
+				pins.analogWritePin(AnalogPin.P2, intensity);
 				break
 			case GeneralActuatorPort.p13:
 				pins.analogWritePin(AnalogPin.P13, intensity);
