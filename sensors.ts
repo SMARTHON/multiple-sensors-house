@@ -196,19 +196,19 @@ namespace House {
 
     export function getGeneralSensor(port: GeneralSensorPort): number {
         switch (port) {
-			case port.a1:
+			case GeneralSensorPort.a1:
 				return light_variable;
 				break
-			case port.a2:
+			case GeneralSensorPort.a2:
 				return button_variable;
 				break
-			case port.a3:
+			case GeneralSensorPort.a3:
 				return motion_variable;
 				break
-			case port.a6:
+			case GeneralSensorPort.a6:
 				return flame_variable;
 				break
-			case port.a7:
+			case GeneralSensorPort.a7:
 				return towngas_variable;
 			break
 		}
