@@ -265,7 +265,7 @@ namespace House {
 	//% blockId="smarthon_buzzer"
     //% block="Set Buzzer to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
-    //% weight=42
+    //% weight=45
 	//%subcategory=More	
 	
     export function TurnBuzzer(intensity: number): void {
@@ -276,7 +276,7 @@ namespace House {
 	//% blockId="smarthon_motorfan_acw"
     //% block="Set Motor fan anti-clockwisely to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
-    //% weight=45
+    //% weight=44
 	//%subcategory=More
 	//% blockGap=7	
 	
@@ -289,7 +289,7 @@ namespace House {
 	//% blockId="smarthon_180_servo"
     //% block="Set 180° Servo to degree %degree"
     //% intensity.min=0 intensity.max=180
-    //% weight=44
+    //% weight=43
 	//%subcategory=More
 	//% blockGap=7	
 	
@@ -301,7 +301,7 @@ namespace House {
 		
 	//% blockId="smarthon_360_servo"
     //% block="Set 360° Servo to direction %direction|speed %speed"
-    //% weight=43
+    //% weight=42
 	//%subcategory=More
 	
     export function Turn360Servo(direction: ServoDirection, speed: ServoSpeed): void {
@@ -346,10 +346,10 @@ namespace House {
 	
 	//% blockId="smarthon_house_general_output"
     //% block="Set general output port %port|intensity %intensity"
-    //% weight=42
+    //% weight=41
 	//%subcategory=More
 	
-    export function TurnGeneralOutput(intensity: number, port: GeneralActuatorPort): void {
+    export function TurnGeneralOutput(port: GeneralActuatorPort, intensity: number): void {
 		switch (port) {
 			case GeneralActuatorPort.p0:
 				pins.analogWritePin(AnalogPin.P0, intensity);
