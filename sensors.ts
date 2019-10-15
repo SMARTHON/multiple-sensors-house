@@ -118,7 +118,7 @@ namespace House {
     }
 
     //% blockId="smarthon_get_light_house" 
-    //% block="Get light value"
+    //% block="Get light value (intensity)"
     //% weight=80	
 	//% blockGap=7	
 
@@ -155,7 +155,7 @@ namespace House {
     }
 
 	//% blockId="smarthon_get_button" 
-    //% block="Get button pressed"
+    //% block="Get button (pressed or not)"
     //% weight=76	
 	//% blockGap=7	
 
@@ -165,7 +165,7 @@ namespace House {
 
 	
 	//% blockId="smarthon_get_motion" 
-    //% block="Get motion value"
+    //% block="Get motion (triggered or not)"
     //% weight=75	
 	//% blockGap=7	
 
@@ -174,7 +174,7 @@ namespace House {
     }
 
 	//% blockId="smarthon_get_flame" 
-    //% block="Get flame value"
+    //% block="Get flame (present or not)"
     //% weight=74	
 	//% blockGap=7	
 
@@ -182,7 +182,7 @@ namespace House {
         return flame_variable;
     }
 	//% blockId="smarthon_get_towngas" 
-    //% block="Get town gas value"
+    //% block="Get town gas value (intensity)"
     //% weight=73
 
     export function getTownGas(): number {
@@ -190,7 +190,7 @@ namespace House {
     }
 	
 	//% blockId="smarthon_get_generalsensor" 
-    //% block="Get general sensor port %port"
+    //% block="Get general sensor value port %port"
     //% weight=72
 	//% blockGap=7	
 
