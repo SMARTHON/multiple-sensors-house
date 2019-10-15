@@ -262,6 +262,17 @@ namespace House {
 		pins.analogWritePin(AnalogPin.P13, intensity);
     }
 	
+	//% blockId="smarthon_buzzer"
+    //% block="Set Buzzer to intensity %intensity"
+    //% intensity.min=0 intensity.max=1023
+    //% weight=42
+	//%subcategory=More	
+	
+    export function TurnBuzzer(intensity: number): void {
+			
+		pins.analogWritePin(AnalogPin.P14, intensity);
+    }
+	
 	//% blockId="smarthon_motorfan_acw"
     //% block="Set Motor fan anti-clockwisely to intensity %intensity"
     //% intensity.min=0 intensity.max=1023
@@ -333,15 +344,31 @@ namespace House {
 		}
     }
 	
-	//% blockId="smarthon_buzzer"
-    //% block="Set Buzzer to intensity %intensity"
-    //% intensity.min=0 intensity.max=1023
+	//% blockId="smarthon_house_general_output"
+    //% block="Set general output port %port|intensity %intensity"
     //% weight=42
-	//%subcategory=More	
+	//%subcategory=More
 	
-    export function TurnBuzzer(intensity: number): void {
-			
-		pins.analogWritePin(AnalogPin.P14, intensity);
+    export function TurnGeneralOutput(intensity: number, port: GeneralActuatorPort): void {
+		switch (port) {
+			case GeneralActuatorPort.p0:
+				pins.analogWritePin(AnalogPin.P0, intensity);
+				break
+			case GeneralActuatorPort.p1:
+				pins.analogWritePin(AnalogPin.P1, intensity);
+				break
+			case GeneralActuatorPort.p13:
+				pins.analogWritePin(AnalogPin.P13, intensity);
+				break
+			case GeneralActuatorPort.p15:
+				pins.analogWritePin(AnalogPin.P15, intensity);
+				break
+			case GeneralActuatorPort.p16:
+				pins.analogWritePin(AnalogPin.P16, intensity);
+			break
+		}
     }
+	
+
 
 }
